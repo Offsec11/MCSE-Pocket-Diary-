@@ -1,6 +1,8 @@
 # MCSE-Pocket-Diary-
 Quick windows server Configuration 
 
+Note: Before viewing the repository, Download json viewer or json editor for better viewing experience 
+
 Technology / Server imcludes :
 
 1.DHCP
