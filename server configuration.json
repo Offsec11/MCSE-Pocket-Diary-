@@ -1,0 +1,202 @@
+{
+  "activeNotes": [
+    {
+      "id": "091f9c47-6795-4d70-93c2-08cef674eda7",
+      "content": "--Configuring iSCSI Target Server--\n\n1. Go to Server Manager in DC, click File and Storage Services.\n\n2. Click To install iSCSI Target Server, start the Add roles and Features Wizard.\n\n3. In Select server roles page, check the box iSCSI Target Server, click Next.\n\n4. In Select features page, click Next.\n\n5. Check box Restart the destination server automatically if required, click Install.\n\n6. Go to Server Manager, select File and Storage Services, and select iSCSI, click\nTo create an iSCSI virtual disk, start the New iSCSI Virtual Disk Wizard.\n\n7. Enter Name (Ex: Vdisk1), click Next.\n\n8. Enter the iSCSI virtual disk size (Ex: 4 GB), click Next\n\n9. Select New iSCSI target, click Next.\n\n10. Enter the Name (Ex: Target1), click Next.\n\n11. Select Enter a value for the selected type, select IP Address in Type, enter the\nValue (Ex: 10.0.0.1), click OK.\n\n12. To allow other computers to access the iSCSI Target Server, Select Enter a\nvalue for the selected type, select IP Address in Type, enter the Value (Ex:\n10.0.0.1), click OK.\n\n13. Only the specified servers can access the iSCSI Target Server, click Next.\n\n14. In Enable Authentication page, click Next.\n\n15. Click Create.\n\n16. Verify the message Completed, click Close.\n\n17. ISCSI Virtual Disk Vdisk1.vhd has been created.\n\n18. Similarly create multiple iSCSI Virtual Disk that can be accessed from SYS2.\n\nConfiguring iSCSI Initiator :\n\n1.Go to Start in iscsi client , type iSCSI in Search Apps, select iSCSI Initiator\n\n2. Click Yesto Microsoft iSCSI service.\n\n3. Enter the IP Address of Target Server (Ex: 10.0.0.1), click Quick Connect.\n\n4. Verify for the message Connected, Login Succeeded, click Done\n\n5. Go to Server Manager ,File and Storage Services ,Disks.\n\n6. Right click on offline disk iSCSI, select Bring Online.\n\n7. Click Yes\n\n8. Select Storage Pools, and Verify for Physical Disk1\n\n",
+      "creationDate": "2021-07-03T09:53:35.176Z",
+      "lastModified": "2021-07-03T09:58:10.999Z",
+      "tags": [
+        "iSCSI",
+        "targetserver"
+      ]
+    },
+    {
+      "id": "1040a725-c0e9-434c-92e4-df5e30fd4793",
+      "content": "\n--Configure WebServer IIS --\n\n1. Open Server Manager and click on Tools then from the list will show click on\n“Internet Information Services (IIS) Manager”.\n\n2. Expand server name, and then expand sites and do right click and click on\n“Add website”.\n\n3. Specify the site and the path, and type “Hostname”.\n\n4. And click OK. Web site successfully added.\n\nAdding the Default Document for the website :\n\n1. Open IIS expand sites select website right click and select Explore\n\n2. Select the Webpage Right click & select Rename, Copy the webpage name\n\n3. In IIS ,expand sites Select website,  open intpub and from there open your ceataed application or document.\n\n4.Click Add, Mention (Paste) the html file name (with Extension of file) eg : yahoo.html click ok\n\n5. open DNS and go to foreward lookup zone create new domain or ip which you created for IIS server and add the record \n\nVERIFICATION :\n\n1. Open Internet Explorer or any browser and access the website\n\n2. Type website name or IP Address\n\nCreating Virtual Directory :\n\n1. Go to Start, select Internet Information Services Manager.\n\n2. Expand the system name, Select the Web Site (Yahoo) for which you want to\ncreate Virtual Directory Right click and select Add Virtual Directory.\n\n3. Specify the Alias name to the Virtual Directory (Ex: mail), and Browse to\nselect the physical path Ex:(D:\\Yahoomail) ,click OK\n\n4. Virtual Directory will be created.\n\n5. Add the Default Document for the Virtual Directory OK\n\n6. To access the virtual directory specify the syntax in Internet Explorer\nhttp://websitename/virtualdirectoryname\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "creationDate": "2021-07-03T06:13:39.238Z",
+      "lastModified": "2021-07-03T06:45:29.702Z",
+      "tags": [
+        "IIS",
+        "webserver"
+      ]
+    },
+    {
+      "id": "119898d6-cff4-4e8c-b084-a480b1b04450",
+      "content": "--Configuring Windows Server Backup and Recovery--\n\n1. Login as Administrator, go to Server Manager Dashboard and click Add roles\nand features.\n\n2. In Select features page, check the box Windows Server Backup and click Next.\n\n3. Check box Restart the destination server automatically if required, click\nInstall.\n\nHow to Backup Data using Windows Server Backup :\n\n1. Go to Start, type Windows Server Backup in Search Apps, select Windows\nServer Backup.\n\n2. Select Windows Server Backup, (or) to use online backup click Continue\nunder Online backup.\n\n3. Select Local Backup, and click Backup Once.\n\n4. Select Different Options, click Next.\n\n5. Select Custom, click Next.\n\n6. In Selects items for Backup, click Add Items.\n\n7. In Select Items window, check the box imp data folder, click OK.\n\n8. In Select Items for Backup page, click Next.\n\n9. In Specify Destination Type page, select Local drives, click Next.\n\n10. In Select Backup Destination, select Backup destination Backup Drive, click\nNext.\n\n11. In Confirmation page, click Backup.\n\n12. Finally click Close\n\nHow to Recover the Data from Backup File.\n\n1. Before Restoration, go to the drive and delete the data. (only for Lab purpose)\n\n2. Go to Windows Server Backup, select Local Backup, and click Recover.\n\n3. In Getting Started page, select This server, click Next.\n\n4. Select Date and Time of the Backup file to be restored, click Next.\n\n5. In select Recovery Type, select Files and folders, click Next.\n\n6. Select the folder or files to be recovered and click Next.\n\n7. Select Original location, click Next.\n\n8. In Confirmation page, click Recover.\n\n9. Click Close.\n\nVerification:\n\n1. Go to the drive and verify for the folder and files.\n\nthats it.....\n",
+      "creationDate": "2021-07-03T10:13:44.606Z",
+      "lastModified": "2021-07-03T10:19:21.658Z",
+      "tags": [
+        "WinServerBackUp"
+      ]
+    },
+    {
+      "id": "2f234bd0-1726-4183-939a-2d172d99b98c",
+      "content": "--BitLocker--\n\n1.open GPO managment and click on group policy objects (right click on it) and click on New option\n\n2. Give a name to the object\n\n3. select the newely created GPO eg: in my case (bitlocker sales) and right click on it then edit\n\n4.In computer configuration expand policies, then expand Administrative Templates then we need to expand winows components \n\n5. Under Administartive Templates we need to select Bitlocker Drive encryption, Expand it then we need to click on Operating System Drives\n\nNote there are 3 option availiable aswell like Operating Sytem Drives you can select all tose which you want to select the required one.\n\n6.from there we can see the somany option click the best option you want Double click on it and enable it\n\n7. Then create a OU and store a domain computer or a amember server in it\n\n8. right click on the OU which you have created then right click, then click  Link an existing GPO option then we need to select the GPO in my case (Bitlocker Sales)\n\n9.Go to client PC and enable BitLocker on client PC \n\n10. open cmd or powershell if you want to check the status of BitLocker encryption \ntype  Get-BitLockerVolume -MountPoint c: \n\n11.you can also view your recovery key by going to your AD server or your domain controller and click Active Directory users and Computers and click Computers then open properties then click BitLocker recovery Key\n\n\n\n\n\n\n",
+      "creationDate": "2021-07-03T10:40:51.752Z",
+      "lastModified": "2021-07-03T11:16:44.759Z",
+      "tags": [
+        "Bitlocker"
+      ]
+    },
+    {
+      "id": "336fee5a-3762-40ff-ae50-7cf3b000a9d9",
+      "content": "--NTP--",
+      "creationDate": "2021-07-03T11:24:35.163Z",
+      "lastModified": "2021-07-03T11:24:47.803Z",
+      "tags": [
+        "NTP"
+      ]
+    },
+    {
+      "id": "42eef0d2-e026-48d8-9076-2ab568d75782",
+      "content": "--Dynamic Host Configuration Protocol (DHCP)--\n\n1 Before settings DHCP, Configure AD DS in your LAN and make the\nDHCP Host join the Domain first.\n\n2  Run Server Manager and Click [Add roles and features].\n\n3 Click [Next] button.\n\n4. Istall DHCP\n\nDHCP Server : Configure :\n\n1. Run Server manager and click {DHCP} on the left menu\n\n2  Click [More...] link which is upper-right.\n\n3 Click [Complete DHCP configuration] link which is upper -right.\n\n4 Click [Next] button.\n\n5 Specify the credentials to authorize this DHCP Server in AD DS and\nclick [Commit] button.\n\n6 After success authorization normally, click [Close] button.\n\n7 Back to Server Manager and open [Tools] - [DHCP].\n\n8 Right-Click [IPv4] on the left pane and select [New Scope...].\n\n9 Click [Next] button.\n\n10 Input any name and description for this scope.\n\n11 Define IP address range.\n\n12 If you'd like to exclude specific IP address from the range set in\nprevious section, Configure it on here.\n\n13 Define lease duration.\n\n14 Click [Next] button.\n\n15 Define default gateway of your network.\n\n16 Define domain name and DNS server of your network.\n\n17 Define WINS Server. It's OK to keep empty here if you don't need it.\n\n18 Click [Next] button.\n\n19 Click [Finish] button to complete configuration.\n\n20 New DHCP scope has been added.\n\nFrom there you can simply add Reservation and Filteration ",
+      "creationDate": "2021-07-03T07:01:42.927Z",
+      "lastModified": "2021-07-03T07:12:01.723Z",
+      "tags": [
+        "DHCP"
+      ]
+    },
+    {
+      "id": "4989d9f2-9840-499b-925c-0ed8e5c41c4e",
+      "content": "--Active Directory : Configure DC--\n\n1 Run [Server Manager] and click [AD DS].\n\n2 Click [More...] link which is upper-right.\n\n3 Click [Promote this server to domain...] link.\n\n4 Check a box [Add a new forest] and input any Domain name you'd like\nto set For [Root domain name] field.\n\n5 Select [Forest functional level] and [Domain functional level]. This\nexample shows to select [Windows Server 2016] both. Furthermore,\nSet any password for Directory Services Restore Mode.\n\n6 Click [Next] button.\n\n7 Input NetBIOS name you'd like to set.\n\n8 Specify Database folder or Log folder and so on. It's Ok to keep default\nif you don't have specific requirements.\n\n9 Check the contents you configured and click [Next] button.\n\n10 Click [Install] button.\n\n11 After finishing installation, System will restart.\n\n12 After restarting System, logon name is changed as\n[Domainname]\\[User name].\n\nActive Directory : Add User Accounts :\n\n1. Run[Server Manager] and click [Tools] - [Active Directory Users and\nComputers].\n\n2.Right-Click [Users] on left tree and select [New] - [User].\n\n3. Input Username and Logon name for a new user.\n\n4.Set initial password for a new User.\n\n5.Check contents you set and click [Finish] button.\n\n6.A new user is just added.\n\nActive Directory : Join in Domain from Clients :\n\nJoin in Active Directory Domain from Other Windows Clients.\n\n1. Before setting, change to DNS settings to refer Active Directory Host.\n\n2. Open [System] and click [Change settings] link which is lower -right.\n\n3. Move to [Computer Name] tab and click [Change] button.\n\n4. Check a box [Domain] and input domain name and next, click [OK]\nbutton.\n\n5. Authentication is required, authenticate with a domain User in AD.\n\n6. On the logon screen WINOWS\nafter restarting\nSERVER 2016 Computer,\nclick \"another user\" to switch Domain user to logon\n\n7. Authenticate with a Domain user you added.\n\n8. Just Logon to Active Directory Domain.\n\n\n\n\n\n\n\n\n",
+      "creationDate": "2021-07-03T07:11:39.165Z",
+      "lastModified": "2021-07-03T07:20:40.440Z",
+      "tags": [
+        "ADDS"
+      ]
+    },
+    {
+      "id": "516b3a42-1c27-41d5-b931-9bf7037d5d2b",
+      "content": "--AD Migrating --",
+      "creationDate": "2021-07-03T11:24:49.935Z",
+      "lastModified": "2021-07-03T11:25:48.626Z",
+      "tags": [
+        "AdMigrating"
+      ]
+    },
+    {
+      "id": "56859141-a4cd-4b6e-bcc6-97b7fa65eec1",
+      "content": "--Creating an organisation unit (OU)--\n\n1. Open Server Manager Click on tools then click Active Directory Users and\nComputer. Or press Win+R and type dsa.msc.\n\n2. Right click on your domain name and click new then click on Organization\nUnit.\n\n3. Type OU Name and click Ok.\n\n4. I have created 3 OU’s under the abc company.\n\n5. Create Users on Active Directory.\n\n6. Right click on OU where you want to create a user. Click new and user.\n\n7. Type First name, last name and user login name, and click “Next”\n\n8. Enter a strong password and click “Next”.\n\n9. Click Finish.\n\n\n",
+      "creationDate": "2021-07-03T07:30:22.336Z",
+      "lastModified": "2021-07-03T07:34:14.396Z",
+      "tags": [
+        "OU"
+      ]
+    },
+    {
+      "id": "5810e63c-44ab-4b1d-b95f-fd6cb549c917",
+      "content": "--Configuring Network Load Balancing--\n\nBefore working on this lab, you must have\n\n1. A computer running windows 2016 server Domain Controller.\n\n2. A computer running windows 2016 server or Member Server.\n\nSYS1\nDomain Controller\nIP Address 10.0.0.1\nSubnet Mask 255.0.0.0\nPreferred DNS 10.0.0.1\n\nSYS2\nMember Server\nIP Address 10.0.0.2\nSubnet Mask 255.0.0.0\nPreferred DNS 10.0.0.1\n\nStep-1: Install Network Load Balancing Feature on SYS1 and SYS2.\n\n1. Login as Administrator, go to Server Manager Dashboard and click Add roles\nand features\n\n2. in Select features page, check the box Network Load Balancing and click Next.\n\n3. Check box Restart the destination server automatically if required, click\nInstall.\n\n4. Go to Start, click Network Load Balancing Manager\n\n5. Click Cluster, select New.\n\n6. Enter the host name Sys1.microsoft.com and click Connect and Next.\n\n7. Verify the Priority and click Next.\n\n8. Click Add\n\n9. Enter Cluster IP Address (Ex: 10.0.0.100) and Subnet (Ex: 255.0.0.0)\n\n10. Enter the Full Internet Name (Ex: www.microsoft.com)\n\n11. Click Finish.\n\n12. Verify for Sys1 added as host in Cluster.\n\n13. Right click on the Cluster (Ex: www.microsoft.com), select Add Host to\nCluster.\n\n14. Enter Host name SYS2, click Connect and Next.\n\n15. Verify the Priority and click Next.\n\n16. Click Finish.\n\n17. Verify the hosts in status of Converged.\n\n18. Configure DNS Host record for Cluster IP Address.\n\n19. Verify for the Host record www.microsoft.com mapped to 10.0.0.100.\n\nthats it....",
+      "creationDate": "2021-07-03T10:06:23.948Z",
+      "lastModified": "2021-07-03T10:13:33.681Z",
+      "tags": [
+        "NLB"
+      ]
+    },
+    {
+      "id": "7b851055-14f5-4f74-87e1-84b289ae61cf",
+      "content": "--WINDOWS DEPLOYMENT SERVICES (WDS)--\n\nBefore working on this lab, you must have\n\n1. A computer running windows 2016 server Domain Controller, DHCP with\nScope, DNS with Services records.\n\n2. A computer with or without any Operating system.\n\nInstalling Windows Deployment Services\nSYS1 – CONFIGURATION – WDS SERVER\n\n1. Go to Start, click Server Manager\n\n2. In the Server Manager Console, Select Add roles and features\n\n........\n\nConfiguring Windows Deployment Services :\n\n1. Go to Tools, select Windows Deployment Services.\n\n2. Right click Server Name, Select Configure Server.\n\n3. Browse and select any empty drive to store Image Folder (or) change the\nDrive letter click Next.\n\nNote: If the WDS server is a DHCP server also then one more wizard will be\ndisplayed indicating that the WDS service should not listen on port 67.\nSo, we have to check the boxes, Do not listen on port 67 and Configure DHCP\noption tag 60 in all DHCP scope options to PXE Client.\n\n4. Select Respond to all Known and Unknown Client Computers, and click Next\n\n5. Wizard will Configure the WDS Server\n\n6. Uncheck the box Add Images to Windows Deployment Server now, and click\nFinish.\n\n7. WDS Server Service configured successfully and started.\n\n8. Right click Boot Images Select Add Boot Image.\n\n9. Browse and Select boot.wim file from 2012 OS DVD\n(Ex:D:\\Sources\\boot.wim)\n\n10. Click Next.\n\n11. Give Name to image Ex: Windows Server 2012.\n\n12. Click Next.\n\n13. mage will be added ,click Finish.\n\n14. Right click Install Images Select Add Install Image.\n\n15. Give Name to Image Group Ex: Server Group and click Next.\n\n16. Browse and select Install.wim file from 2012 OS DVD\n(Ex: D:\\Sources\\install.wim) ,click Next.\n\n17. Select Windows Server 2012 STANTARD and click Next.\n\n18. Click Next\n\n19. Click Finish.\n\nVerification  :\n\n1. Boot the Client system with PXE NIC Card\n\n2. Press F12key when prompted to start the Installation.\n\n3. Then mention the Administrator Credential.\n\n4. Select the Operating System which you want to install.\n\n5. Select the Partition to install the O.S and follow the instructions.\n\n\n\n\n\n",
+      "creationDate": "2021-07-03T09:42:01.628Z",
+      "lastModified": "2021-07-03T09:51:23.884Z",
+      "tags": [
+        "WDS"
+      ]
+    },
+    {
+      "id": "83115f45-4837-4d1d-9273-1dae0c4d8954",
+      "content": "--Applying Auditing Policy--\n\n1. Press Windows Key to go to Start, select Group Policy Management.\n\n2. Right click Domain Controllers Select Create a GPO...\n\n3. Enter name (Ex: Auditing User Account Management) and click OK.\n\n4. Right Click created GPO, select Edit.\n\n5. Expand Computer configuration >Policies>Windows Settings >Security\nSettings>Advanced Audit Policy Configuration >Audit Policies >Account\nManagement>>Right click Audit User Account Management >>Select Properties\n\n6. Check the box, Configure the following audit events and Select Success and\nFailure.\n\nVerification :\n\n1. Login as Administrator on D.C, go to Active Directory Users and\nComputers and delete a user (S1).\n\n2. Go to Start, Type Event in Search Apps and select Event Viewer\n\n3. Expand Windows Logs >Security and select the Event Audit Success\nProperties.\n\n4. Verify the event displaying user s1 deleted by Administrator\n\n",
+      "creationDate": "2021-07-03T09:00:51.473Z",
+      "lastModified": "2021-07-03T09:04:32.081Z"
+    },
+    {
+      "id": "8ac9051b-a174-4554-b4ed-f45b47067b16",
+      "content": "--Configuring Sites, Site links--\n\n1. Logon to D.C as Administrator, go to Start, Active Directory Sites and\nServices.\n\n2. Right click Sites>New Site.\n\n3. Enter the site name (INDIA) and select DEFAULTIPSITELINK and click OK.\n\n4. Site INDIA will be created, click OK.\n\n5. Similarly create another site (USA)\n\n6. Expand Default-First-Site-Name\n(SYS1) Move\nExpand Servers Right click Server\n\n7. Select the Site (INDIA) and click OK.\n\n8. Server is now moved under INDIA site.\n\nCreating Active Directory Site-Links :\n\n1. Log on to D.C as Administrator\n\n2. Go to Active Directory Site sand Services Expand Sites >Expand Inter-Site\nTransports >Right click IP >select New Site Link.\n\n3. Enter the name (INDIA-USA Link), select INDIA and USA sites and click\nAdd>click OK.\n\n4. Right click INDIA-USA Link, select Properties.\n\n5. Click Change Schedule.\n\n6.Select the Interval of Time for ReplicationAvailable, click OK OK.\n\n\n\n\n\n",
+      "creationDate": "2021-07-03T09:34:49.655Z",
+      "lastModified": "2021-07-03T09:40:07.001Z",
+      "tags": [
+        "configuringSites",
+        "Sitelinks"
+      ]
+    },
+    {
+      "id": "b2a58f7f-1bb6-431c-b325-8d66b39fffb8",
+      "content": "--(WSUS) Install and configure Windows Server Update Services --\n   Install WSUS\n\nNote: before installing and configuring WSUS server want internet connecction\n  \n1. From within Server Manager, select “Add roles and features”.\n\n2.The Add Roles and Features Wizard window will appear, click the Next button.\n\n3.On the Select installation type screen, leave Role-based or feature-based\ninstallation selected and click Next.\n\n4. Click Next to continue.\n\n5.On the Select server roles screen, scroll down and select “Windows Server\nUpdate Services”.\n\n6. A new screen will appear advising you that new features will be added,\nsimply click the Add Features button. This will also add the IIS role, as this is\nused to serve content out.\n\n9. After this click Next to proceed.\n\n10. Click next\n\n11. On the Content location selection, we have the option of selecting where\nthe WSUS updates will be stored. Give a valid location for storing updation\n\n12. On the Web Server Role (IIS) screen, you are advised that IIS 10.0 will be\nused for WSUS, simply click next to continue.\n\n13.Finally on the Confirm installation selections, review your choices and click\nthe Install button to begin the installation process.\n\nConfiguring WSUS :\n\n1. To start this process, simply open the WSUS console from within the Tools\nmenu in Server Manager.\n\n2. From the Complete WSUS Installation window, we will select that we wish\nto store our updates locally in the folder specified.\n\n3. After you click Run, the WSUS Configuration Wizard will open which we\nwill now run through.\n\n4. On the Windows Server Update Services Configuration Wizard before you\nbegin page, read the information and click Next. Basically you should\nconfirm that other Windows machines can connect to the WSUS server,\nand that the WSUS server can connect to the Internet to download updates.\n\n5. Choose whether or not you want to join the Microsoft Update\nImprovement Program, as I am running a test instance I have select to not\njoin and provide any false test data.\n\n6. Next you will choose your upstream server. If this is your first WSUS server,\nyou will likely want to leave the default setting to synchronize from\nMicrosoft update over the Internet. This will download update files from\nMicrosoft to your WSUS server. Alternatively if you already have another\nWSUS server that stores the update files, you can specify it here to\nsynchronize with it as a downstream server.\n\n7. Next specify if your WSUS server needs to connect through a proxy server\nin order to connect to the Internet. In my test environment the WSUS\nserver connects directly out to the Internet so I’ll just select next, however\nif you’re using a proxy server specify its details here.\n\n8. Now we are asked to connect to an upstream server, click the start\nconnecting button to save the information entered so far. You’ll need to\nwait a while WSUS attempts to connect to an upstream server, either from\nthe Internet or within your own network based on your selection in the last\nstep. This took quite a long time (over 30 minutes) to complete\n\n9. Choose the languages that you want to download updates for. Note that\nyou should only select the languages that you actually support, if you select\nadditional languages additional update files will be downloaded for each\nupdate to include your language selection which can quickly increase your\ndisk space requirements.\n\n10. On the Choose products screen simply select the Microsoft products in your\nnetwork that you plan on updating with WSUS. Updates for the selected\nproducts will be stored on our WSUS server, so the more you pick the more\ndisk space you will require.\n\n11. We can now choose the types of updates to download, for example we can\nspecify that we only want to download critical and security updates.\n\n12. Finally we can set the synchronization schedule which will specify when\nWSUS will check for new updates to download. By default manual\nsynchronization is set, however we will change this to happen a few times\nper day.\n\n13. That’s it, on the finished screen you can optionally check to begin the initial\nsynchronization which will start downloading updates from the Internet\nafter you click finish.\n\n",
+      "creationDate": "2021-07-03T09:58:37.266Z",
+      "lastModified": "2021-07-03T10:05:35.389Z",
+      "tags": [
+        "WSUS"
+      ]
+    },
+    {
+      "id": "baf6ea60-1dd5-4478-befd-b024c1274d7a",
+      "content": "--Applying Group Policy on Organizational Unit Level--\n\n1. go to tools and select group policy managment:\n\n2. Right click OU (Sales) >Create a GPO in this domain and Link it here.\n\n3. Enter any name to GPO Link (Ex: Remove Computer Icon) and click OK.\n\n4. Right Click created GPO Link >>Edit\n\n5. In Group Policy Management Editor Window, Go to User Configuration\n>>Policies> Administrative> Templates Desktop.\n\n6. Select a policy (Remove Computer icon on the Desktop) on right side of the\nscreen, Right Click and select Properties.\n\n7. Select Enabled option and click Apply and OK.\n\n8. Then run gpupdate in command prompt or run tab\n\nVerification :\n\n1. Logon to client system as sales OU user (s1) and verify the changes\nbecause of the policy.\n\n\n\n\n\n\n\n",
+      "creationDate": "2021-07-03T07:34:25.409Z",
+      "lastModified": "2021-07-03T07:38:25.155Z",
+      "tags": [
+        "GPO"
+      ]
+    },
+    {
+      "id": "bfda10cc2146468da25550afba789ad8",
+      "content": "--FTP configuration--\n\nCreating FTP Site :\n\n1. Open any drive and create a folder (Ex: FTP Dir) open the folder and create some files Ex: 1.txt, 2.txt, 3.txt, 4.txt.\n\n2. Go to Start, select Internet Information Services (IIS) Manager.\n\n3. In the left pane of the Internet Information Services dialog box Expand the\nserver ,Right click on Sites and select ADD FTP Site\n\n4. In Site Information screen, enter the FTP site name, and enter the path to\nthe home folder (Content Directory) you want to assign to this FTP site. This can be local path or UNC of the shared folder you can browse for this folderif you need. click next\n\n5. In the Bindings and SSL Settings dialog box select the IP address and port\nno. and select “NO SSL”.\n\n6. In Authentication and Authorization Information dialog box, Check the box\nfor Anonymous and Basic, Select All Users, Check the box for Read and\nWrite ,click Finish.\n\n7. Before accessing the FTP site from the Client systems you need to configure DNS and create foreward lookup zone and type the ip or name as mentioned in the FTP\n\nGo to any Computer Open Internet Explorer and type ftp://ftp_ip_address\nand Press Enter.",
+      "creationDate": "2021-07-02T16:49:33.000Z",
+      "lastModified": "2021-07-03T06:51:38.468Z",
+      "tags": [
+        "FTP"
+      ]
+    },
+    {
+      "id": "c49e2f40-be05-4f95-9624-c7caa50734fb",
+      "content": "--DHCP Failover--\n\n1. configure DHCP server with reservation, exxlude, filtering and leasing\n\nthen...\n\nconfigure failover :\n1.ipv4(right click)\n\n2. configure failover \n\n3. add server>>browse>>advanced>>find new>>select the server>>Maxximum client lead time>>min mode >>hotstandby>>state switch over interval>>shared secret>>finish\n\n4.then click replicate failover scope by clicking ipv4(right click)\n\n",
+      "creationDate": "2021-07-03T09:19:40.827Z",
+      "lastModified": "2021-07-03T09:29:28.728Z",
+      "tags": [
+        "DHCPFailover"
+      ]
+    },
+    {
+      "id": "cc49572e-41e6-40e0-b9f8-adcd8d76ee63",
+      "content": "--Applying Software Deployment Policy--\n\n1. Logon to D.C as Administrator, Create a Shared folder with (.msi) applications\nin it\n\n2. Go to Group Policy Management\n\n3. Right click OU (Sales1) Create a GPO in this domain and Link it here Enter\nthe name (Software Deployment) click OK, Right click the policy and click\nEdit.\n\n4. User Configuration >Expand Policies >Expand Software settings >>Right click\nSoftware Installation >Select New Package\n\n6. From the left pane, select Network, OpenSYS1 (Server containing shared\nfolder).\n\n6. Select the MSI Softwares Shared Folder>>click Open.\n\n7. Select the Application Folder (Power Point Viewer)>>click Open.\n\n8. Select the Application (PPVIEWER) click Open.\n\n9. Select the Method to Deploy Application (Published) and click OK.\n\nVerification : \n\n1. Go to Member Server and login as user1.\n\n2. Go to Control Panel, click Programs and Features.\n\n3. Click Install a Program from the Network, Select the Application and Install\n\n\n",
+      "creationDate": "2021-07-03T07:38:27.394Z",
+      "lastModified": "2021-07-03T07:40:55.581Z",
+      "tags": [
+        "softwaredeeploymentpolicy"
+      ]
+    },
+    {
+      "id": "e9008fff-f7fa-4386-ae35-e735fb9f9df9",
+      "content": "--Installing and configuring FSRM--\n\nConfiguring Quota Limits using FSRM\n\n1. Go to Start, select File Server Resource Manager.\n\n2. Expand Quota Management, right click Quotas, and select Create Quota.\n\n3. Click Browse and Select the Quota path (Ex: D:\\Home)\n\n4. Select Auto apply template and create quotas on existing and new\nsubfolders. Select the limit and click Create\n\nVerification :\n\n1. Log in as User (User1) on Client or Member Server (SYS2), Open Computer.\n\n2. Verify the Size of the Network drive Z: (Home Folder).\n\nLogin as other users and verify the size of the Home Folder.\n\nConfiguring File Screening Using FSRM : \n\n1. Go to Start, File Server Resource Manager, Right click on File Server Resource\nManager and select Configure Options.\n\n2. Check the box Record file screening activity in auditing database, click OK.\n\n3. Expand File Screening Management, right click File Screens and select Create\nFile Screen\n\n4. Click Browse to select the File screen path, select option Block Image Files,\nand click Create.\n\n5. Right click on the created file screen, select Edit File Screen Properties.\n\n6. Select the Screening type Active screening, click OK.\n\nVerification :\n1. Log in as User (User1) on Client or Member Server (SYS2),\n\n2. Open Computer, Network drive Z: (Home Folder) and try to create a New\nBitmap Image file .\n\n3. Verify for Access Denied Page.\n\nConfiguring Storage Reports Management using FSRM :\n\n1. Go to Start, File Server Resource Manager, right click Storage Reports\nManagement and select Generate Reports Now.\n\n2. In settings page, check box File Screening Audit.\n\n3. Select Scope, click ADD and select the home folder (Ex: D:\\Home).\n\n4. Select Wait for reports to be generated and then display them, click OK.\n\n5. It Generates the Storage Reports\n\n\n\n\n\n\n\n\n",
+      "creationDate": "2021-07-03T07:24:07.261Z",
+      "lastModified": "2021-07-03T07:30:07.674Z",
+      "tags": [
+        "FSRM"
+      ]
+    },
+    {
+      "id": "f38cdae444944e91ac0608d7b1c1a3d4",
+      "content": "--Domain Naming System (DNS) configuration--\n\nDNS Server : Add Forward lookup Zone\n\n1. Run Server Manager and select [Tools] - [DNS].\n\n2. Select own Hostname on the left pane and right -click the own\nHostname to show menu on the left pane, then select [New Zone...].\n\n3. Click [Next] button.\n\n4 Check a box [Primary zone] and click [Next] button.\n\n5 Check a box [Forward lookup Zone] and click [Next] button.\n\n6 Input Zone name. As the description on the screen -shot below, set\ndomain name or portion of domain name for this zone name.\n\n7 Set zone-file-name and click [Next] button. It's OK to keep default\nfor zone-file-name.\n\n8 Click [Next] button with keeping default.\n\n9 Click [Finish] button.\n\n10 A new zone has been created under the Forward lookup Zone.\n\nDNS Server : Add Reverse lookup Zone :\n\n1 Run Server Manager and select [Tools] - [DNS], next right-click\n[Reverse lookup Zones...] to show menu on the left pane, then select\n[New Zone...].\n\n2 Click [Next] button.\n\n3 Check a box [Primary zone] and click [Next] button.\n\n4 Check a box [IPv4 Reverse lookup Zone] and click [Next] button.\n\n5 Input [Network ID]. The example follows is for the case 10.0.0.0/24.\n\n6 Set zone-file-name and click [Next] button. It's OK to keep default\nfor zone-file-name.\n\n7 Click [Next] button with keeping default.\n\n8 Click [Finish] button.\n\n9 A new zone has been created under the Reverse lookup Zone.\n\nDNS Server : Add A/PTR record :\n\n1 Run Server Manager and select [Tools] - [DNS], next right-click the\nown domain name to show menu on the left pane, then select [New\nHost(A or AAA)...].\n\n2 Input Hostname and IP address you'd like to add.\nFurthermore, check a box [Create associated pointer (PTR) record].\n\n3 A new A-record has been just added.\n\n4 Make sure with nslookup to resolve Hostname or IP address.\n\nDNS Server : Add CNAME record :\n\n1 Run Server Manager and select [Tools] - [DNS], next right-click the\nown domain name to show menu on the left pane, then select [New\nAlias (CNAME)...].\n\n2 Input Alias name and FQDN, and also target Hostname like follows.\n\n3 A new CNAME record has been just added.\n\n4 Make sure with nslookup to resolve the Alias Name.\n\n",
+      "creationDate": "2021-07-02T16:50:44.000Z",
+      "lastModified": "2021-07-03T07:01:19.492Z"
+    },
+    {
+      "id": "f5964350-413f-4316-9ac1-58810ab52216",
+      "content": "--AD DS Replication--\n\n1. Tools>site and services\n2. site (expand)\n3. server (expand)\n4. DC-01 (expand)\n5. NTDS setting (right click)\n6. all task\n7. check replication topology\n8. ok\n \"refresh\"\n9. automatically generate..........(right click)\n10. replicate now \n\nSame step in another DR-01 server\n\n",
+      "creationDate": "2021-07-03T09:15:33.563Z",
+      "lastModified": "2021-07-03T09:19:28.121Z",
+      "tags": [
+        "AD",
+        "replication"
+      ]
+    }
+  ],
+  "trashedNotes": [
+    {
+      "id": "8b704f09d68544e38cec32e89b1e4f7c",
+      "content": "",
+      "creationDate": "2021-07-02T11:33:20.000Z",
+      "lastModified": "2021-07-03T06:13:25.588Z",
+      "tags": [
+        "MCSE"
+      ]
+    }
+  ]
+}
